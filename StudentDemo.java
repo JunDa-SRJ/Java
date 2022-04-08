@@ -1,22 +1,21 @@
-package com.itheima02;
+package itheima04;
+
 /*
-         学生测试类
+   学生测试类
  */
-/*
 public class StudentDemo {
     public static void main(String[] args) {
-        //创建对象
         Student s = new Student();
 
-        //使用对象
-        System.out.println(s.name + "," + s.age);
-        s.name = "史荣俊";
-        s.age = 21;
-        System.out.println(s.name + "," + s.age);
+        s.show();
 
-        s.study();
-        s.dohomework();
+        Student s2 = new Student("dajun");
+        s2.show();
 
+     /*  Student s3 = new Student(age:20);
+        s3.show();
+
+        Student s4 = new Student(name:"dajun",age:20);
+        s4.show();*/
     }
 }
-*/

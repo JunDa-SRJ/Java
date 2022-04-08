@@ -1,41 +1,39 @@
-package com.itheima02;
+package com.itheima03;
 /*
-     学生类
+      学生类
  */
 
+
 public class Student {
- /*   //成员变量
-    String name;
-    int age;
-
-    //成员方法
-    public void study(){
-        System.out.println("好好学习");
-    }
-    public void dohomework(){
-        System.out.println("做作业");
-
-
-    }*/
-
     //成员变量
-    String name;
-    //   int age;
+    private String name;
     private int age;
-    //提供get/set方法
-    public void setAge(int a) {
-        if (a < 0 || a > 120) {
-            System.out.println("你输入的数字有误");
-        } else {
-            age = a;
-        }
+
+   //get/set方法
+  /*  public void setName(String n){
+         name = n;
+    }*/
+    public void setName(String name){
+        this.name = name;//this修饰的变量用于指代成员变量
     }
-    public int getAge() {
+
+    public String getName(){
+        return name;
+    }
+   /* public void setAge(int a){
+          age= a;
+    }*/
+    public void setAge(int age){
+        this.age = age;
+    }
+
+
+    public int getAge(){
         return age;
     }
+   public void show(){
+       System.out.println(name + "," + age);
+   }
 
-    //成员方法
-    public void show() {
-        System.out.println(name + "," + age);
-    }
+
 }
