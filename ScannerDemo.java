@@ -1,26 +1,22 @@
-/* 
-   Êı¾İÊäÈë£º
-     µ¼°ü£º
-	     import java.util.scanner;
-	 ´´½¨¶ÔÏó£º
-	     Scanner sc = new Scanner(System.in);
-	 ½ÓÊÜÊı¾İ£º
-         int x = sc.nextInt();
-*/
-import java.util.Scanner;
+package com.itheima03;
+/*
+  Scannerï¼š
+     ç”¨äºè·å–é”®ç›˜å½•å…¥æ•°æ®ã€‚ï¼ˆåŸºæœ¬æ•°æ®ç±»å‹ï¼Œå­—ç¬¦ä¸²ç±»å‹ï¼‰
+  public String nextlineï¼ˆï¼‰ï¼š
+     è·å–é”®ç›˜å½•å…¥å­—ç¬¦ä¸²æ•°æ®
 
+ */
+import java.util.Scanner;
 public class ScannerDemo {
-         public static void main(String[] args){
-		 //´´½¨¶ÔÏó
-		 Scanner sc = new Scanner(System.in);
-		 //½ÓÊÕÊı¾İ
-		 int x = sc.nextInt();
-		 //Êä³öÊı¾İ
-		 System.out.println("x:" + x);
-		 }
-		 
-}		 
-	
-	 
-	 
-	 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²æ•°æ®ï¼š");
+
+        String line = sc.nextLine();
+
+        System.out.println("ä½ è¾“å…¥çš„æ•°æ®æ˜¯ï¼š "+ line);
+    }
+
+
+}
