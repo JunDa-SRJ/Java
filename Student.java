@@ -1,39 +1,60 @@
-package com.itheima03;
+package com.itheima04;
 /*
-      学生类
+   学生类
+   Alt + Insert/鼠标右键Generate
  */
 
-
 public class Student {
-    //成员变量
+    //学号
+    private String sid;
+    //姓名
     private String name;
-    private int age;
+    //年龄
+    private String age;
+    //居住地
+    private String address;
+    public Student(){}
 
-   //get/set方法
-  /*  public void setName(String n){
-         name = n;
-    }*/
-    public void setName(String name){
-        this.name = name;//this修饰的变量用于指代成员变量
+    public Student(String sid,String name,String age,String address)
+    {
+        this.sid = sid;
+        this.name = name;
+        this.age = age;
+        this.address = address;
     }
 
-    public String getName(){
+    public void setSid(String sid){
+        this.sid = sid;
+    }
+    public  String getsid(){
+        return sid;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
         return name;
     }
-   /* public void setAge(int a){
-          age= a;
-    }*/
-    public void setAge(int age){
+
+
+    public void setAge(String age) {
         this.age = age;
     }
 
 
-    public int getAge(){
+    public String getAge() {
         return age;
     }
-   public void show(){
-       System.out.println(name + "," + age);
-   }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getAddress() {
+        return address;
+    }
 
 
 }
