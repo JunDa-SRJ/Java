@@ -61,9 +61,17 @@ public class StudentManager {
     public static void addStudent(ArrayList<Student> array) {
         //键盘录入学生对象所需要的数据，显示提示信息，提示要输入何种信息
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("请输入学生的学号： ");
-        String sid = sc.nextLine();
+        String sid;
+        while(true) {
+            System.out.println("请输入学生的学号： ");
+             sid = sc.nextLine();
+            boolean flag = isUsed(array, sid);
+            if (flag) {
+                System.out.println("你输入的学号已经被使用，请重新输入");
+            } else {
+                break;
+            }
+        }
         System.out.println("请输入学生的姓名： ");
         String name = sc.nextLine();
         System.out.println("请输入学生的年龄： ");
@@ -83,6 +91,21 @@ public class StudentManager {
         //给出添加成功提示
         System.out.println("添加学生成功");
     }
+    //定义一个方法，判断学号是否被使用
+    public static boolean isUsed(ArrayList<Student> array,String sid){
+         boolean flag = false;
+         for(int i = 0;i< array.size();i++){
+             Student s =new Student();
+             if(s.getsid().equals(sid)){
+                 flag = true;
+                 break;
+             }
+         }
+         return flag;
+    }
+
+
+
 
 
     //定义一个方法用于查看学生信息
@@ -110,7 +133,7 @@ public class StudentManager {
    //定义一个方法用于删除学生信息
     public static void deleteStudent(ArrayList<Student> array){
         //用键盘录入要删除学生的信息
-        Scanner sc = new Scanner(System.in);
+      /*  Scanner sc = new Scanner(System.in);
         String sid = sc.nextLine();
         for(int i = 0;i< array.size();i++){
             Student s = array.get(i);
@@ -118,12 +141,37 @@ public class StudentManager {
                 array.remove(sid);
             }
         }
-        System.out.println("删除成功");
+        System.out.println("删除成功");*/
+        //键盘录入要修改学生学号，显示提示信息
+        Scanner sc =new Scanner(System.in);
+
+        System.out.println("请输入你要删除学生的学号： ");
+        String sid = sc.nextLine();
+         int index = -1;
+        //在删除或者修改学生的操作前，对学号是否存在进行判断
+        //如果不存在，显示提示信息
+        //如果存在，执行删除或者修改操作
+        for(int i = 0;i< array.size();i++){
+            Student s = array.get(i);
+            if(s.getsid().equals(sid)){
+                index = i;
+                break;
+            }
+        }
+        if(index == -1){
+            System.out.println("该信息不存在，请重新输入");
+        }
+        else{
+            array.remove(index);
+            //给出删除成功的提示
+            System.out.println("删除学生成功");
+        }
     }
+
 
    //定义一个方法用于修改学生信息
     public static  void updateStudent(ArrayList<Student> array){
-        Scanner sc =new Scanner(System.in);
+       /* Scanner sc =new Scanner(System.in);
         System.out.println("请输入你要修改的学生学号： ");
         String sid = sc.nextLine();
 
@@ -154,7 +202,50 @@ public class StudentManager {
             }
         }
         System.out.println("修改成功");
+
+        */
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("请输入你要修改学生的学号： ");
+        String sid = sc.nextLine();
+
+        System.out.println("请输入学生的新姓名： ");
+        String name = sc.nextLine();
+        System.out.println("请输入学生的年龄： ");
+        String age =  sc.nextLine();
+        System.out.println("请输入学生的新地址： ");
+        String address = sc.nextLine();
+
+
+        Student s = new Student();
+        s.setSid(sid);
+        s.setName(name);
+        s.setAge(age);
+        s.setAddress(address);
+
+        int index = -1;
+        for(int i = 0;i< array.size();i++){
+            Student student = array.get(i);
+            if(s.getsid().equals(sid)){
+                index = i;
+                break;
+            }
+        }
+        if(index == -1){
+            System.out.println("该信息不存在，请重新输入");
+        }else{
+            array.set(index,s);
+            System.out.println("修改成功");
+        }
+
+
+
+
+
+
     }
+
 
 
 }
