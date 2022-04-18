@@ -1,12 +1,13 @@
 package com.itheima06;
 
-public class Student {
-    private String name;
+public class Teacher {
+    private String name ;
     private int age;
 
-    public Student(){}
 
-    public Student(String name,int age){
+      public Teacher(){}
+
+    public Teacher(String name,int age){
         this.name = name;
         this.age = age;
     }
@@ -19,7 +20,7 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge(){
+    public int getage(){
         return age;
     }
 
@@ -27,11 +28,9 @@ public class Student {
         this.age = age;
     }
 
-    public void Study(){
-        System.out.println("好好学习 天天向上");
+    public void teacher(){
+        System.out.println("用爱成就每一位学员");
     }
-
-
 
 
 
