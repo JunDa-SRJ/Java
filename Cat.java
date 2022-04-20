@@ -1,17 +1,10 @@
-package com.itheima06;
+package itheima02;
+
+
 
 public class Cat extends Animal {
-
-
-    public Cat() {}
-
-    public Cat(String name,int age){
-        super(name,age);
+    @Override
+    public void eat(){
+        System.out.println("猫吃鱼");
     }
-
-    public void catMouse(){
-        System.out.println("猫和老鼠");
-    }
-
-
 }

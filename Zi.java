@@ -1,18 +1,11 @@
-package com.itheima05;
-/*
-  继承的好处：
-      1.提高了代码的复用性（多个类相同的成员放到同一个类中）
-      2.提高了代码的维护性（如果方法的代码需要修改，修改一处即可）
-  继承的弊端：
-      继承让类与类之间产生了关系，类的耦合性增强了，当父类发生变化时子类实现也不得不跟着变化，削弱了子类的独立性
-  什么时候使用继承：
-      继承体现的关系：is a
-      假设法：我有两个类A和B，如果他们满足A是B的一种，或者B是A的一种，就说明它们存在继承关系，就可以考虑
-      举例：苹果和水果，猫和动物，猫和狗
- */
+package itheima02;
 
 public class Zi extends Fu {
-    public void method(){
-        System.out.println("method方法被调用");
+    public static void main(String[] args) {
+        //创建Zi的对象，测试看有哪些方法可以使用
+        Zi z = new Zi();
+        z.show2();
+        z.show3();
+        z.show4();
     }
 }
