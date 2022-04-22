@@ -1,10 +1,8 @@
-package itheima02;
+package com.itheima03;
 
-
-
-public class Cat extends Animal {
+public class Cat extends Animal{
     @Override
-    public void eat(){
+    public void eat() {
         System.out.println("猫吃鱼");
     }
 }
